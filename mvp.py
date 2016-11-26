@@ -10,8 +10,7 @@ Great!
 How are you today?
 I am pretty good
 What's up?
-I need to poop
-'''
+I need to poop'''
 
 train_data = train.split('\n')
 
