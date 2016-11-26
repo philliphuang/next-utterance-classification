@@ -26,8 +26,6 @@ while True:
 	best_ind = min(enumerate(dists), key=itemgetter(1))[0] 
 
 	if best_ind == len(train_data):
-		print train_data[0]
+		print 'Pizzabot: ' + train_data[0]
 	else: 
-		print train_data[best_ind + 1]
-
-
+		print 'Pizzabot: ' + train_data[best_ind + 1]
