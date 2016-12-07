@@ -23,5 +23,5 @@ class TFIDF_Predictor:
 
 		# Sort by highest cosine similarity and return indices in descending order
 		sorted_list = np.argsort(sims, axis=0)[::-1]
-		# print sorted_list
+
 		return sorted_list
