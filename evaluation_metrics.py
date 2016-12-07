@@ -1,15 +1,15 @@
 def recall_at_k(y_pred, k=1):
-"""
-recall@k evaluation metric
+	"""
+	recall@k evaluation metric
 
-Args:
-	y_pred: list of predicted rankings for each of 10 possible responses (descending order)
-			i.e. [0,3,1,2,5,6,4,7,8,9] means response 0 is rated most probable, 9 least probable
-	k: number of tries model has to predict the correct response
+	Args:
+		y_pred: list of predicted rankings for each of 10 possible responses (descending order)
+				i.e. [0,3,1,2,5,6,4,7,8,9] means response 0 is rated most probable, 9 least probable
+		k: number of tries model has to predict the correct response
 
-Returns:
-	Accuracy percentage
-"""
+	Returns:
+		Accuracy percentage
+	"""
 	num_correct = 0
 	num_total = len(y_pred)
 
