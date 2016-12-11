@@ -7,5 +7,6 @@ train_data = np.append(train.Context.values,train.Utterance.values)
 texts = [doc.split() for doc in train_data]
 dictionary = gensim.corpora.Dictionary(texts)
 corpus = [dictionary.doc2bow(text) for text in texts]
-lda = gensim.models.ldamulticore.LdaMulticore(corpus, num_topics=100, workers=7)
-return 'success'
+lda = gensim.models.ldamulticore.LdaMulticore(corpus, id2word=dictionary, num_topics=100, workers=7)
+lda.save('lda_model1')
+print 'done'
