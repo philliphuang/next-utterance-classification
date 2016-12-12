@@ -88,8 +88,6 @@ def str_agglom_cluster(data, N, affinity, linkage):
 	# while cluster number > N
 	while count > N:
 
-		
-
 		# decrement cluster number
 		count = count - 1
 	return pd.DataFrame({'cluster': clusters, 'message': data})
