@@ -20,6 +20,5 @@ def recall_at_k(y_pred, k=1):
 
 	return float(num_correct) / num_total
 
-# TODO: Move into separate testing file
 assert(recall_at_k([[0,1,2,3,4], [1,2,3,4]]) == 0.5)
 assert(recall_at_k([[0,1,2,3,4]]) == 1)
