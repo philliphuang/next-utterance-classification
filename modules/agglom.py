@@ -72,14 +72,26 @@ def str_agglom_cluster(data, N, affinity, linkage):
 		pandas dataframe of 2 columns: cluster #, message
 	'''
 
+	### DATA ITEMS ###
+
 	# calculate distance matrix
 	dists = dist_matrix(data, affinity)
 
 	# number of clusters
 	count = len(data)
 
-	# while cluster number is not == N
+	# list to store clusters
+	clusters = list(range(count))
 
-	# decrement cluster number
+	### ALGORITHM ###
+
+	# while cluster number > N
+	while count > N:
+
+		
+
+		# decrement cluster number
+		count = count - 1
+	return pd.DataFrame({'cluster': clusters, 'message': data})
 
 # see testing/test_agglom.py for testing
