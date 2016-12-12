@@ -1,9 +1,10 @@
 from math import log
-class NaiveBayes(data, num_classes):
+class NaiveBayes():
     '''Input:
         Data - pandas dataframe, first column class, rest of columns features
         This should be bag of words, but might also be Doc2Vec vectorization
         Trains on this data
+        N - number of classes
     '''
     def __init__(self, data, num_classes):
         self.num_words = data.shape[1]-1
