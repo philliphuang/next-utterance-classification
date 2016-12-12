@@ -62,6 +62,10 @@ def lda_predict(model, dictionary, context, responses):
 # load saved dictionary
 dictionary = gensim.corpora.dictionary.Dictionary.load("dict/ubuntu.dict")
 
+# Load trained LDA model
+lda = gensim.models.LdaModel.load("LDA/lda_model1")
+
+# Load test set
 test = pd.read_csv("data/test.csv")
 
 # Evaluate model performance with lda model
