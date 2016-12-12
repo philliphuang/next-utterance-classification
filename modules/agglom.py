@@ -5,7 +5,6 @@ import numpy as np
 import editdistance
 import nltk
 
-
 def bleu_score(x, y):
 	'''
 	return negative BLEU score, looking at unigrams only as some strings may only contain one word
@@ -30,23 +29,28 @@ def dist_matrix(data, affinity):
 	length = len(data) 
 
 	# initialize distance matrix 
-	distances = np.empty(length, length)
+	distances = np.empty([length, length])
 
-	# 
-	dist_funct = editdistance.eval() if affinity == 'edit' else bleu_score() 
+	# choose distance function
+	dist_funct = editdistance.eval if affinity == 'edit' else bleu_score
 
 	# for each string
 	for index, string in enumerate(data):
 
-		# go to remaining strings
-		i = index + 1
+		# go to other strings 
+		i = index 
 		for other in data[index:]:
+
 			dist = dist_funct(string, other)
+
+			# fill in both relevant cells in matrix
 			distances[index, i] = dist
 			distances[i, index] = dist
 
-			# increment index of ne
+			# increment index of other string
 			i = i + 1
+
+	return distances
 
 def str_agglom_cluster(data, N, affinity, linkage):
 	'''
@@ -74,8 +78,8 @@ def str_agglom_cluster(data, N, affinity, linkage):
 	# number of clusters
 	count = len(data)
 
-	# 
+	# while cluster number is not == N
 
-	while 
+	# decrement cluster number
 
-
+# see testing/test_agglom.py for testing
