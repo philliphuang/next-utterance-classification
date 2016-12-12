@@ -52,44 +52,46 @@ def dist_matrix(data, affinity):
 
 	return distances
 
-def str_agglom_cluster(data, N, affinity, linkage):
-	'''
-	Agglomerative clustering algorithm for strings
+# Note: Reimplementation of Agglomerative Clustering abandoned because of insurmountably poor performance
 
-	Input:
-		data: list of strings to cluster
-		N: number of clusters to return
-		affinity: how to compute distance between strings
-			'edit': edit distance
-			'bleu': BLEU score
-		linkage: how to compute distance between clusters
-			'single': closest pair
-			'complete': farthest pair
-			'average': average between each set
-			# note: ward cannot be implemented because euclidian distance is not applicable
+# def str_agglom_cluster(data, N, affinity, linkage):
+# 	'''
+# 	Agglomerative clustering algorithm for strings
 
-	Output:
-		pandas dataframe of 2 columns: cluster #, message
-	'''
+# 	Input:
+# 		data: list of strings to cluster
+# 		N: number of clusters to return
+# 		affinity: how to compute distance between strings
+# 			'edit': edit distance
+# 			'bleu': BLEU score
+# 		linkage: how to compute distance between clusters
+# 			'single': closest pair
+# 			'complete': farthest pair
+# 			'average': average between each set
+# 			# note: ward cannot be implemented because euclidian distance is not applicable
 
-	### DATA ITEMS ###
+# 	Output:
+# 		pandas dataframe of 2 columns: cluster #, message
+# 	'''
 
-	# calculate distance matrix
-	dists = dist_matrix(data, affinity)
+# 	### DATA ITEMS ###
 
-	# number of clusters
-	count = len(data)
+# 	# calculate distance matrix
+# 	dists = dist_matrix(data, affinity)
 
-	# list to store clusters
-	clusters = list(range(count))
+# 	# number of clusters
+# 	count = len(data)
 
-	### ALGORITHM ###
+# 	# list to store clusters
+# 	clusters = list(range(count))
 
-	# while cluster number > N
-	while count > N:
+# 	### ALGORITHM ###
 
-		# decrement cluster number
-		count = count - 1
-	return pd.DataFrame({'cluster': clusters, 'message': data})
+# 	# while cluster number > N
+# 	while count > N:
+
+# 		# decrement cluster number
+# 		count = count - 1
+# 	return pd.DataFrame({'cluster': clusters, 'message': data})
 
 # see testing/test_agglom.py for testing
