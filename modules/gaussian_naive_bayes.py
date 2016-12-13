@@ -12,7 +12,6 @@ class GaussianNaiveBayes():
                 Train on this data
         
         num_classes: number of classes
-        alpha: Laplace smoothing parameter (default 1.0)
     '''
 
     def __init__(self, data, num_classes):
