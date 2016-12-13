@@ -1,4 +1,5 @@
 from math import log
+
 class NaiveBayes():
     '''Input:
         Data - pandas dataframe, first column class, rest of columns features
